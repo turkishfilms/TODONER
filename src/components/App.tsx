@@ -12,6 +12,8 @@ function App() {
     donate: false,
   });
 
+  const [list, setList] = useState(["woah"]);
+
   const handleNav = (viewName: string) => {
     setView({
       home: viewName === "home",
@@ -19,15 +21,24 @@ function App() {
       donate: viewName === "donate",
     });
   };
+  const handleItemAdd = (newItem: string) => {
+    setList([newItem, ...list]);
+  };
 
+  const appendList = (text: string) => {
+    let newList = list;
+    console.log("A,appendli:text=> ,", text)
+    newList.push(text);
+    setList(newList);
+  };
   return (
     <>
       <TopBar onClickLink={handleNav} />
       {view.home && (
         <div>
-          <Button>New Item</Button>
-          <TodoInput />
-          <ListArea />
+          <Button onAddItem={handleItemAdd}>New Item</Button>
+          <TodoInput onAddText={appendList} />
+          <ListArea>{list}</ListArea>
         </div>
       )}
       {view.chain && <div>chain</div>}
