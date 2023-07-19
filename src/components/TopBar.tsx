@@ -1,8 +1,19 @@
+import Button from "./Button";
 
-const TopBar = () => {
-  return (
-    <div>TopBar</div>
-  )
+interface TopBarInterface {
+  children: Array<Button>;
 }
 
-export default TopBar
+const TopBar = ({ children }: TopBarInterface) => {
+  return (
+    <>
+      <div className="navbar">TopBar + {children.length}</div>
+      {children.forEach((child) => {
+        return child;
+      })}
+      {/* { <Button count={1}>N</Button> <Button count={22}>toot</Button>} */}
+    </>
+  );
+};
+
+export default TopBar;
