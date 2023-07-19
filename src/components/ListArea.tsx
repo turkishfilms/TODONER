@@ -1,8 +1,9 @@
-
-const ListArea = () => {
-  return (
-    <div>ListArea</div>
-  )
+interface ListAreaInterface {
+  children: Array<ListItem>;
 }
 
-export default ListArea
+const ListArea = ({ children }: ListAreaInterface) => {
+  return <div>ListArea - {children.length}</div>;
+};
+
+export default ListArea;

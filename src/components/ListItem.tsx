@@ -1,8 +1,5 @@
-
 const ListItem = () => {
-  return (
-    <div>ListItem</div>
-  )
-}
+  return <div>ListItem</div>;
+};
 
-export default ListItem
+export default ListItem;

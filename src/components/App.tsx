@@ -1,13 +1,25 @@
-// import { useState } from 'react'
-
-import Button from "./Button"
+import Button from "./Button";
+import ListArea from "./ListArea";
+import ListItem from "./ListItem";
+import TopBar from "./TopBar";
 
 const App = () => {
-  return (<>
-  <div>Hello</div>
-  <Button count={12}>Hey</Button>
-  <Button count={12}>Noway</Button>
-  </>)
-}
+  return (
+    <>
+      <TopBar>
+        <Button count={12}>Noway</Button>
+        <Button count={12}>Hey</Button>
+      </TopBar>
 
-export default App
+      <Button count={3}>Hugo</Button>
+      <ListArea>
+        <ListItem></ListItem>
+        <ListItem></ListItem>
+        <ListItem></ListItem>
+        <ListItem></ListItem>
+      </ListArea>
+    </>
+  );
+};
+
+export default App;
