@@ -1,7 +1,7 @@
 const TodoInput = () => {
   return (
     <>
-      <input type="text" className="textinput" value="TodoHere" />
+      <input type="text" className="textinput" defaultValue="TodoHere" />
     </>
   );
 };
