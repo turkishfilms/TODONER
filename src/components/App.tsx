@@ -1,28 +1,37 @@
+import { useState } from "react";
+
 import Button from "./Button";
 import ListArea from "./ListArea";
 import TopBar from "./TopBar";
 import TodoInput from "./TodoInput";
-import { useState } from "react";
 
 function App() {
-  const [screen, setScreen] = useState({
-    home: 1,
-    chain: 0,
-    donate: 0,
+  const [view, setView] = useState({
+    home: true,
+    chain: false,
+    donate: false,
   });
-  // setScreen({ home: 1, chain: 0, donate: 0 });
+
+  const handleNav = (viewName: string) => {
+    setView({
+      home: viewName === "home",
+      chain: viewName === "chain",
+      donate: viewName === "donate",
+    });
+  };
+
   return (
     <>
-      <TopBar />
-      {screen.home && (
+      <TopBar onClickLink={handleNav} />
+      {view.home && (
         <div>
           <Button>New Item</Button>
           <TodoInput />
           <ListArea />
         </div>
       )}
-      {screen.chain && <div>chain</div>}
-      {screen.donate && <div>btc or avax plz</div>}
+      {view.chain && <div>chain</div>}
+      {view.donate && <div>btc or avax plz</div>}
     </>
   );
 }
