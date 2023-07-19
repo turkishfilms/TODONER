@@ -1,3 +1,5 @@
+import React from "react";
+
 interface NavBarElementInterface {
   children: string;
   onclick: () => void;
@@ -6,7 +8,7 @@ interface NavBarElementInterface {
 const NavBarElement = ({ children, onclick }: NavBarElementInterface) => {
   return (
     <>
-      <div onClick={() => onclick()}>{children}</div>
+      <nav onClick={() => onclick()}>{children}</nav>
     </>
   );
 };

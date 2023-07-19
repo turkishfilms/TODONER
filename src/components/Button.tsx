@@ -1,13 +1,11 @@
 interface ButtonInterface {
   children: String;
-  count: Number;
 }
 
-const Button = ({ children, count }: ButtonInterface) => {
+const Button = ({ children }: ButtonInterface) => {
   return (
     <>
       <div className="btn btn-primary">{children}</div>
-      <div>heyhey+ {count}</div>
     </>
   );
 };
