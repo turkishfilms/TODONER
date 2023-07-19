@@ -1,14 +1,20 @@
 import Button from "./Button";
 import ListArea from "./ListArea";
 import ListItem from "./ListItem";
+import NavBarElement from "./NavBarElements";
 import TopBar from "./TopBar";
+
+
+
+const doThing = ()=>{
+  console.log("pooty")
+}
 
 const App = () => {
   return (
     <>
       <TopBar>
-        <Button count={12}>Noway</Button>
-        <Button count={12}>Hey</Button>
+      <NavBarElement onclick={doThing}>h</NavBarElement>
       </TopBar>
 
       <Button count={3}>Hugo</Button>
